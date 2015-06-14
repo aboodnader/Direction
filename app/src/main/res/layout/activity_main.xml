@@ -1,0 +1,86 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.smart.abdelrahmanalabed.direction.MainActivity"
+    android:orientation="vertical"
+    android:weightSum="155"
+    android:background="@drawable/new_background">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="25"
+        android:text="أهلاً و سهلاً "
+        android:gravity="center"
+        android:textSize="25sp"
+        android:textColor="@android:color/holo_purple" />
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/content"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="120"
+            android:padding="16dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="الأذكار"
+                android:id="@+id/azkar"
+                android:onClick="open"
+                android:background="@layout/solid_color_shape"
+                android:textColor="#ffffff"
+                android:layout_marginBottom="2dp"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="المأثورات"
+                android:id="@+id/mathurat"
+                android:onClick="open"
+                android:background="@layout/solid_color_shape"
+                android:textColor="#ffffff"
+                android:layout_marginBottom="2dp"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="حساب المعدل"
+                android:id="@+id/gpa"
+                android:onClick="open"
+                android:background="@layout/solid_color_shape"
+                android:textColor="#ffffff"
+                android:layout_marginBottom="2dp"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="جدول المتابعة"
+                android:id="@+id/folowings"
+                android:onClick="open"
+                android:background="@layout/solid_color_shape"
+                android:textColor="#ffffff"
+                android:layout_marginBottom="2dp"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="صفحتنا على الفيسبوك"
+                android:id="@+id/facebook"
+                android:onClick="open"
+                android:background="@layout/solid_color_shape"
+                android:textColor="#ffffff"
+                android:layout_marginBottom="2dp"/>
+        </LinearLayout>
+    </ScrollView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="10"/>
+
+</LinearLayout>

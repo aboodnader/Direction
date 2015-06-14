@@ -1,0 +1,222 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="155"
+    android:background="@drawable/new_background">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="25"
+        android:text="الأذكار"
+        android:gravity="center"
+        android:textSize="25sp"
+        android:textColor="@android:color/holo_purple"/>
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="120"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="أدعية اليوم والليلة"
+                android:onClick="open_according"
+                android:background="@layout/solid_color_shape"
+                android:layout_marginBottom="2dp"
+                android:id="@+id/d1"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="دعاء لبس الثوب وخلعه"
+                android:onClick="open_according"
+                android:background="@layout/solid_color_shape"
+                android:layout_marginBottom="2dp"
+                android:id="@+id/d2"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="دعاء الخروج من المنزل و دخوله"
+                android:onClick="open_according"
+                android:background="@layout/solid_color_shape"
+                android:layout_marginBottom="2dp"
+                android:id="@+id/d3"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="دعاء المشي الى المسجد ودخوله وخروج منه"
+                android:onClick="open_according"
+                android:background="@layout/solid_color_shape"
+                android:layout_marginBottom="2dp"
+                android:id="@+id/d4"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="دعاء التخلي و المباشرة"
+                android:onClick="open_according"
+                android:background="@layout/solid_color_shape"
+                android:layout_marginBottom="2dp"
+                android:id="@+id/d5"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="دعاء الوضوء والغسل والآذان"
+                android:onClick="open_according"
+                android:background="@layout/solid_color_shape"
+                android:layout_marginBottom="2dp"
+                android:id="@+id/d6"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="دعاء الطعام"
+                android:onClick="open_according"
+                android:background="@layout/solid_color_shape"
+                android:layout_marginBottom="2dp"
+                android:id="@+id/d7"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="دعاء التهجد"
+                android:onClick="open_according"
+                android:background="@layout/solid_color_shape"
+                android:layout_marginBottom="2dp"
+                android:id="@+id/d8"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="دعاء الارق"
+                android:onClick="open_according"
+                android:background="@layout/solid_color_shape"
+                android:layout_marginBottom="2dp"
+                android:id="@+id/d9"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="دعاء النوم"
+                android:onClick="open_according"
+                android:background="@layout/solid_color_shape"
+                android:layout_marginBottom="2dp"
+                android:id="@+id/d10"/>
+
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ختام الصلاة و المجلس"
+                android:onClick="open_according"
+                android:background="@layout/solid_color_shape"
+                android:layout_marginBottom="2dp"
+                android:id="@+id/d11"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="دعاء الاستخارة الشرعية"
+                android:onClick="open_according"
+                android:background="@layout/solid_color_shape"
+                android:layout_marginBottom="2dp"
+                android:id="@+id/d12"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="صلاة الحاجة"
+                android:onClick="open_according"
+                android:background="@layout/solid_color_shape"
+                android:layout_marginBottom="2dp"
+                android:id="@+id/d13"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=" أدعية السفر"
+                android:onClick="open_according"
+                android:background="@layout/solid_color_shape"
+                android:layout_marginBottom="2dp"
+                android:id="@+id/d14"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="أدعية الظواهر الكونية"
+                android:onClick="open_according"
+                android:background="@layout/solid_color_shape"
+                android:layout_marginBottom="2dp"
+                android:id="@+id/d15"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="أدعية الزواج والأولاد"
+                android:onClick="open_according"
+                android:background="@layout/solid_color_shape"
+                android:layout_marginBottom="2dp"
+                android:id="@+id/d16"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="أدعية المرئيات"
+                android:onClick="open_according"
+                android:background="@layout/solid_color_shape"
+                android:layout_marginBottom="2dp"
+                android:id="@+id/d17"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="أدعية السلام والتحية"
+                android:onClick="open_according"
+                android:background="@layout/solid_color_shape"
+                android:layout_marginBottom="2dp"
+                android:id="@+id/d18"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="أدعية عوارض الحياة"
+                android:onClick="open_according"
+                android:background="@layout/solid_color_shape"
+                android:layout_marginBottom="2dp"
+                android:id="@+id/d19"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="أدعية المرض والوفاة"
+                android:onClick="open_according"
+                android:background="@layout/solid_color_shape"
+                android:layout_marginBottom="2dp"
+                android:id="@+id/d20"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="10"/>
+
+</LinearLayout>

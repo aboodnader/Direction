@@ -1,0 +1,132 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="155"
+    android:background="@drawable/new_background">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="25"
+        android:text="جدول المتابعات"
+        android:gravity="center"
+        android:textSize="25sp"
+        android:textColor="@android:color/holo_purple"/>
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="120"
+        android:padding="16dp">
+
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TableRow
+                    android:gravity="center">
+                    <CheckBox android:id="@+id/f1"/>
+                    <TextView android:text="صلاة الفجر "/>
+                </TableRow>
+                <TableRow
+                    android:gravity="center">
+                    <CheckBox android:id="@+id/f2"/>
+                    <TextView android:text="صلاة الفجر "/>
+                </TableRow>
+                <TableRow
+                    android:gravity="center">
+                    <CheckBox android:id="@+id/f3"/>
+                    <TextView android:text="صلاة الفجر "/>
+                </TableRow>
+                <TableRow
+                    android:gravity="center">
+                    <CheckBox android:id="@+id/f4"/>
+                    <TextView android:text="صلاة الفجر "/>
+                </TableRow>
+                <TableRow
+                    android:gravity="center">
+                    <CheckBox android:id="@+id/f5"/>
+                    <TextView android:text="صلاة الفجر "/>
+                </TableRow>
+                <TableRow
+                    android:gravity="center">
+                    <CheckBox android:id="@+id/f6"/>
+                    <TextView android:text="صلاة الفجر "/>
+                </TableRow>
+                <TableRow
+                    android:gravity="center">
+                    <CheckBox android:id="@+id/f7"/>
+                    <TextView android:text="صلاة الفجر "/>
+                </TableRow>
+                <TableRow
+                    android:gravity="center">
+                    <CheckBox android:id="@+id/f8"/>
+                    <TextView android:text="صلاة الفجر "/>
+                </TableRow>
+                <TableRow
+                    android:gravity="center">
+                    <CheckBox android:id="@+id/f9"/>
+                    <TextView android:text="صلاة الفجر "/>
+                </TableRow>
+                <TableRow
+                    android:gravity="center">
+                    <CheckBox android:id="@+id/f10"/>
+                    <TextView android:text="صلاة الفجر "/>
+                </TableRow>
+                <TableRow
+                    android:gravity="center">
+                    <CheckBox android:id="@+id/f11"/>
+                    <TextView android:text="صلاة الفجر "/>
+                </TableRow>
+                <TableRow
+                    android:gravity="center">
+                    <CheckBox android:id="@+id/f12"/>
+                    <TextView android:text="صلاة الفجر "/>
+                </TableRow>
+                <TableRow
+                    android:gravity="center">
+                    <CheckBox android:id="@+id/f13"/>
+                    <TextView android:text="صلاة الفجر "/>
+                </TableRow>
+                <TableRow
+                    android:gravity="center">
+                    <CheckBox android:id="@+id/f14"/>
+                    <TextView android:text="صلاة الفجر "/>
+                </TableRow>
+                <TableRow
+                    android:gravity="center">
+                    <CheckBox android:id="@+id/f15"/>
+                    <TextView android:text="صلاة الفجر "/>
+                </TableRow>
+                <TableRow
+                    android:gravity="center">
+                    <CheckBox android:id="@+id/f16"/>
+                    <TextView android:text="صلاة الفجر "/>
+                </TableRow>
+                <TableRow
+                    android:gravity="center">
+                    <CheckBox android:id="@+id/f17"/>
+                    <TextView android:text="صلاة الفجر "/>
+                </TableRow>
+
+                <TableRow
+                    android:gravity="center">
+                    <CheckBox android:id="@+id/f18"/>
+                    <TextView android:text="صلاة الفجر "/>
+                </TableRow>
+
+                <TableRow
+                    android:gravity="center">
+                    <CheckBox android:id="@+id/f19"/>
+                    <TextView android:text="صلاة الفجر "/>
+                </TableRow>
+
+            </TableLayout>
+
+    </ScrollView>
+
+</LinearLayout>
