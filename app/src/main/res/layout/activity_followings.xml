@@ -35,95 +35,58 @@
                 <TableRow
                     android:gravity="center">
                     <CheckBox android:id="@+id/f2"/>
-                    <TextView android:text="صلاة الفجر "/>
+                    <TextView android:text=" الضحى "/>
                 </TableRow>
                 <TableRow
                     android:gravity="center">
                     <CheckBox android:id="@+id/f3"/>
-                    <TextView android:text="صلاة الفجر "/>
+                    <TextView android:text="صلاة الظهر "/>
                 </TableRow>
                 <TableRow
                     android:gravity="center">
                     <CheckBox android:id="@+id/f4"/>
-                    <TextView android:text="صلاة الفجر "/>
+                    <TextView android:text="صلاة العصر "/>
                 </TableRow>
                 <TableRow
                     android:gravity="center">
                     <CheckBox android:id="@+id/f5"/>
-                    <TextView android:text="صلاة الفجر "/>
+                    <TextView android:text="صلاة المغرب "/>
                 </TableRow>
                 <TableRow
                     android:gravity="center">
                     <CheckBox android:id="@+id/f6"/>
-                    <TextView android:text="صلاة الفجر "/>
+                    <TextView android:text="صلاة العشاء"/>
                 </TableRow>
                 <TableRow
                     android:gravity="center">
                     <CheckBox android:id="@+id/f7"/>
-                    <TextView android:text="صلاة الفجر "/>
+                    <TextView android:text="السنن الرواتب "/>
                 </TableRow>
                 <TableRow
                     android:gravity="center">
                     <CheckBox android:id="@+id/f8"/>
-                    <TextView android:text="صلاة الفجر "/>
+                    <TextView android:text="الوتر "/>
                 </TableRow>
                 <TableRow
                     android:gravity="center">
                     <CheckBox android:id="@+id/f9"/>
-                    <TextView android:text="صلاة الفجر "/>
+                    <TextView android:text="الأذكار"/>
                 </TableRow>
                 <TableRow
                     android:gravity="center">
                     <CheckBox android:id="@+id/f10"/>
-                    <TextView android:text="صلاة الفجر "/>
+                    <TextView android:text=" الورد اليومي "/>
                 </TableRow>
                 <TableRow
                     android:gravity="center">
                     <CheckBox android:id="@+id/f11"/>
-                    <TextView android:text="صلاة الفجر "/>
-                </TableRow>
-                <TableRow
-                    android:gravity="center">
-                    <CheckBox android:id="@+id/f12"/>
-                    <TextView android:text="صلاة الفجر "/>
-                </TableRow>
-                <TableRow
-                    android:gravity="center">
-                    <CheckBox android:id="@+id/f13"/>
-                    <TextView android:text="صلاة الفجر "/>
-                </TableRow>
-                <TableRow
-                    android:gravity="center">
-                    <CheckBox android:id="@+id/f14"/>
-                    <TextView android:text="صلاة الفجر "/>
-                </TableRow>
-                <TableRow
-                    android:gravity="center">
-                    <CheckBox android:id="@+id/f15"/>
-                    <TextView android:text="صلاة الفجر "/>
-                </TableRow>
-                <TableRow
-                    android:gravity="center">
-                    <CheckBox android:id="@+id/f16"/>
-                    <TextView android:text="صلاة الفجر "/>
-                </TableRow>
-                <TableRow
-                    android:gravity="center">
-                    <CheckBox android:id="@+id/f17"/>
-                    <TextView android:text="صلاة الفجر "/>
+                    <TextView android:text=" الصدقة "/>
                 </TableRow>
 
-                <TableRow
-                    android:gravity="center">
-                    <CheckBox android:id="@+id/f18"/>
-                    <TextView android:text="صلاة الفجر "/>
-                </TableRow>
-
-                <TableRow
-                    android:gravity="center">
-                    <CheckBox android:id="@+id/f19"/>
-                    <TextView android:text="صلاة الفجر "/>
-                </TableRow>
+                <Button
+                    android:text="حفظ  "
+                    android:onClick="save"
+                    android:background="@layout/solid_color_shape"/>
 
             </TableLayout>
 
