@@ -18,6 +18,7 @@ public class Followings extends Activity {
     SQLiteDatabase db;
     long dayInMiliSeconds = 8640000L;
     long currentMiliSeconds;
+    long id;
 
     CheckBox fajer;
     CheckBox duha;
@@ -49,18 +50,31 @@ public class Followings extends Activity {
         sadaka = (CheckBox)findViewById(R.id.f11);
 
         currentMiliSeconds = Calendar.getInstance().getTimeInMillis();
+        currentMiliSeconds = currentMiliSeconds - ( currentMiliSeconds % dayInMiliSeconds );
         dbHelper = new DBHelper(this);
         db = dbHelper.getReadableDatabase();
         String selectMax = "SELECT max(id) FROM azkar";
         String [] idcolumn = {"id"};
         Cursor cursor = db.query(AzkarEntryContract.AzkarEntry.TABLE_NAME, idcolumn, null, null, null, null, null);
         cursor.moveToFirst();
-        long id = cursor.getLong(cursor.getColumnIndexOrThrow(AzkarEntryContract.AzkarEntry.COLUMN_NAME_ID));
-        if(id - ( id % dayInMiliSeconds ) < currentMiliSeconds - ( currentMiliSeconds % dayInMiliSeconds )  ){
-            String selectAll = "SELECT * FROM azkar ";
-            cursor = db.rawQuery(selectAll,null);
-            cursor.moveToPosition(2);
-//            fajer.setChecked(cursor.);getboolean???
+        if(cursor.getCount()!=0) {
+            id = cursor.getLong(cursor.getColumnIndexOrThrow(AzkarEntryContract.AzkarEntry.COLUMN_NAME_ID));
+            if (id == currentMiliSeconds) {
+                String selectAll = "SELECT * FROM azkar WHERE id = " + id;
+                cursor = db.rawQuery(selectAll, null);
+                cursor.moveToFirst();
+                fajer.setChecked(cursor.getInt(cursor.getColumnIndexOrThrow(AzkarEntryContract.AzkarEntry.COLUMN_NAME_FAJER)) > 0);
+                duha.setChecked(cursor.getInt(cursor.getColumnIndexOrThrow(AzkarEntryContract.AzkarEntry.COLUMN_NAME_DUHA)) > 0);
+                duhor.setChecked(cursor.getInt(cursor.getColumnIndexOrThrow(AzkarEntryContract.AzkarEntry.COLUMN_NAME_DUHOR)) > 0);
+                aser.setChecked(cursor.getInt(cursor.getColumnIndexOrThrow(AzkarEntryContract.AzkarEntry.COLUMN_NAME_ASER)) > 0);
+                magreb.setChecked(cursor.getInt(cursor.getColumnIndexOrThrow(AzkarEntryContract.AzkarEntry.COLUMN_NAME_MAGREB)) > 0);
+                isha.setChecked(cursor.getInt(cursor.getColumnIndexOrThrow(AzkarEntryContract.AzkarEntry.COLUMN_NAME_ISHA)) > 0);
+                sunan.setChecked(cursor.getInt(cursor.getColumnIndexOrThrow(AzkarEntryContract.AzkarEntry.COLUMN_NAME_SUNAN)) > 0);
+                weter.setChecked(cursor.getInt(cursor.getColumnIndexOrThrow(AzkarEntryContract.AzkarEntry.COLUMN_NAME_WETER)) > 0);
+                azkar.setChecked(cursor.getInt(cursor.getColumnIndexOrThrow(AzkarEntryContract.AzkarEntry.COLUMN_NAME_AZKAR)) > 0);
+                werd.setChecked(cursor.getInt(cursor.getColumnIndexOrThrow(AzkarEntryContract.AzkarEntry.COLUMN_NAME_WERD)) > 0);
+                sadaka.setChecked(cursor.getInt(cursor.getColumnIndexOrThrow(AzkarEntryContract.AzkarEntry.COLUMN_NAME_SADAKA)) > 0);
+            }
         }
     }
 
@@ -71,23 +85,51 @@ public class Followings extends Activity {
         ContentValues values = new ContentValues();
 
 
-        values.put(AzkarEntryContract.AzkarEntry.COLUMN_NAME_ID, currentMiliSeconds );
-        values.put(AzkarEntryContract.AzkarEntry.COLUMN_NAME_FAJER,fajer.isChecked());
-        values.put(AzkarEntryContract.AzkarEntry.COLUMN_NAME_DUHA, duha.isChecked());
-        values.put(AzkarEntryContract.AzkarEntry.COLUMN_NAME_DUHOR, duhor.isChecked());
-        values.put(AzkarEntryContract.AzkarEntry.COLUMN_NAME_ASER, aser.isChecked());
-        values.put(AzkarEntryContract.AzkarEntry.COLUMN_NAME_MAGREB, magreb.isChecked());
-        values.put(AzkarEntryContract.AzkarEntry.COLUMN_NAME_ISHA, isha.isChecked());
-        values.put(AzkarEntryContract.AzkarEntry.COLUMN_NAME_SUNAN, sunan.isChecked());
-        values.put(AzkarEntryContract.AzkarEntry.COLUMN_NAME_WETER, weter.isChecked());
-        values.put(AzkarEntryContract.AzkarEntry.COLUMN_NAME_AZKAR, azkar.isChecked());
-        values.put(AzkarEntryContract.AzkarEntry.COLUMN_NAME_WERD, werd.isChecked());
-        values.put(AzkarEntryContract.AzkarEntry.COLUMN_NAME_SADAKA, sadaka.isChecked());
+        if( id != currentMiliSeconds ) {
 
-        long rowid = db.insert(
-                AzkarEntryContract.AzkarEntry.TABLE_NAME,
-                "null",
-                values);
-        Toast.makeText(this,"done "+rowid,Toast.LENGTH_LONG).show();
+            values.put(AzkarEntryContract.AzkarEntry.COLUMN_NAME_ID, currentMiliSeconds );
+            values.put(AzkarEntryContract.AzkarEntry.COLUMN_NAME_FAJER,fajer.isChecked());
+            values.put(AzkarEntryContract.AzkarEntry.COLUMN_NAME_DUHA, duha.isChecked());
+            values.put(AzkarEntryContract.AzkarEntry.COLUMN_NAME_DUHOR, duhor.isChecked());
+            values.put(AzkarEntryContract.AzkarEntry.COLUMN_NAME_ASER, aser.isChecked());
+            values.put(AzkarEntryContract.AzkarEntry.COLUMN_NAME_MAGREB, magreb.isChecked());
+            values.put(AzkarEntryContract.AzkarEntry.COLUMN_NAME_ISHA, isha.isChecked());
+            values.put(AzkarEntryContract.AzkarEntry.COLUMN_NAME_SUNAN, sunan.isChecked());
+            values.put(AzkarEntryContract.AzkarEntry.COLUMN_NAME_WETER, weter.isChecked());
+            values.put(AzkarEntryContract.AzkarEntry.COLUMN_NAME_AZKAR, azkar.isChecked());
+            values.put(AzkarEntryContract.AzkarEntry.COLUMN_NAME_WERD, werd.isChecked());
+            values.put(AzkarEntryContract.AzkarEntry.COLUMN_NAME_SADAKA, sadaka.isChecked());
+
+            long rowid = db.insert(
+                    AzkarEntryContract.AzkarEntry.TABLE_NAME,
+                    "null",
+                    values);
+            Toast.makeText(this, "done " + rowid, Toast.LENGTH_LONG).show();//just for test
+
+        }else {
+
+            values.put(AzkarEntryContract.AzkarEntry.COLUMN_NAME_FAJER,fajer.isChecked());
+            values.put(AzkarEntryContract.AzkarEntry.COLUMN_NAME_DUHA, duha.isChecked());
+            values.put(AzkarEntryContract.AzkarEntry.COLUMN_NAME_DUHOR, duhor.isChecked());
+            values.put(AzkarEntryContract.AzkarEntry.COLUMN_NAME_ASER, aser.isChecked());
+            values.put(AzkarEntryContract.AzkarEntry.COLUMN_NAME_MAGREB, magreb.isChecked());
+            values.put(AzkarEntryContract.AzkarEntry.COLUMN_NAME_ISHA, isha.isChecked());
+            values.put(AzkarEntryContract.AzkarEntry.COLUMN_NAME_SUNAN, sunan.isChecked());
+            values.put(AzkarEntryContract.AzkarEntry.COLUMN_NAME_WETER, weter.isChecked());
+            values.put(AzkarEntryContract.AzkarEntry.COLUMN_NAME_AZKAR, azkar.isChecked());
+            values.put(AzkarEntryContract.AzkarEntry.COLUMN_NAME_WERD, werd.isChecked());
+            values.put(AzkarEntryContract.AzkarEntry.COLUMN_NAME_SADAKA, sadaka.isChecked());
+
+            String selection = AzkarEntryContract.AzkarEntry.COLUMN_NAME_ID + " LIKE ?";
+            String[] selectionArgs = { "" + id };
+
+            int count = db.update(
+                    AzkarEntryContract.AzkarEntry.TABLE_NAME,
+                    values,
+                    selection,
+                    selectionArgs);
+
+            Toast.makeText(this, "update  " + count, Toast.LENGTH_LONG).show();//just for test
+        }
     }
 }
