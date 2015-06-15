@@ -104,8 +104,6 @@ public class Followings extends Activity {
                     AzkarEntryContract.AzkarEntry.TABLE_NAME,
                     "null",
                     values);
-            Toast.makeText(this, "done " + rowid, Toast.LENGTH_LONG).show();//just for test
-
         }else {
 
             values.put(AzkarEntryContract.AzkarEntry.COLUMN_NAME_FAJER,fajer.isChecked());
@@ -128,8 +126,6 @@ public class Followings extends Activity {
                     values,
                     selection,
                     selectionArgs);
-
-            Toast.makeText(this, "update  " + count, Toast.LENGTH_LONG).show();//just for test
         }
     }
 }
