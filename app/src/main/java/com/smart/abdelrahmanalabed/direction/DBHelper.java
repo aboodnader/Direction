@@ -9,7 +9,7 @@ public class DBHelper extends SQLiteOpenHelper {
     public static final String DATABASE_NAME = "azkar";
     public static final int DATABASE_VERSION = 1;
     public static final String SQL_CREATE_ENTRIES = "CREATE  TABLE  IF NOT EXISTS "+DATABASE_NAME
-            +" ("+ AzkarEntryContract.AzkarEntry.COLUMN_NAME_ID +" DATETIME PRIMARY KEY  NOT NULL , "
+            +" ("+ AzkarEntryContract.AzkarEntry.COLUMN_NAME_ID +" INTEGER PRIMARY KEY  NOT NULL , "
             + AzkarEntryContract.AzkarEntry.COLUMN_NAME_FAJER +" BOOL NOT NULL , "
             + AzkarEntryContract.AzkarEntry.COLUMN_NAME_DUHA +" BOOL NOT NULL , "
             + AzkarEntryContract.AzkarEntry.COLUMN_NAME_DUHOR +" BOOL NOT NULL , "
