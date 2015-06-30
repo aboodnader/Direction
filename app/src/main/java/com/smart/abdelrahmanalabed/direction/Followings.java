@@ -16,7 +16,7 @@ public class Followings extends Activity {
 
     SQLiteOpenHelper dbHelper;
     SQLiteDatabase db;
-    long dayInMiliSeconds = 8640000L;
+    long dayInMiliSeconds = 86400000L;//24*60*60*1000
     long currentMiliSeconds;
     long id;
 
