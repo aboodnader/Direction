@@ -53,12 +53,11 @@ public class Followings extends Activity {
         currentMiliSeconds = currentMiliSeconds - ( currentMiliSeconds % dayInMiliSeconds );
         dbHelper = new DBHelper(this);
         db = dbHelper.getReadableDatabase();
-        String selectMax = "SELECT max(id) FROM azkar";
-        String [] idcolumn = {"id"};
-        Cursor cursor = db.query(AzkarEntryContract.AzkarEntry.TABLE_NAME, idcolumn, null, null, null, null, null);
+        String selectMax = "SELECT MAX( " + AzkarEntryContract.AzkarEntry.COLUMN_NAME_ID + " ) FROM " + AzkarEntryContract.AzkarEntry.TABLE_NAME ;
+        Cursor cursor = db.rawQuery(selectMax,null);
         cursor.moveToFirst();
         if(cursor.getCount()!=0) {
-            id = cursor.getLong(cursor.getColumnIndexOrThrow(AzkarEntryContract.AzkarEntry.COLUMN_NAME_ID));
+            id = cursor.getLong(0);
             if (id == currentMiliSeconds) {
                 String selectAll = "SELECT * FROM azkar WHERE id = " + id;
                 cursor = db.rawQuery(selectAll, null);
@@ -83,7 +82,6 @@ public class Followings extends Activity {
         db = dbHelper.getWritableDatabase();
 
         ContentValues values = new ContentValues();
-
 
         if( id != currentMiliSeconds ) {
 
