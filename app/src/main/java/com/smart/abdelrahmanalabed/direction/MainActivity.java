@@ -26,7 +26,9 @@ public class MainActivity extends Activity {
             startActivity(new Intent(this,GPA_Activity.class));
         } else if(id == R.id.folowings){
             startActivity(new Intent(this,Followings.class));
-        } else if(id == R.id.facebook){
+        } else if(id == R.id.salah){
+            startActivity(new Intent(this,Salah.class));
+        }else if(id == R.id.facebook){
             startActivity(getOpenFacebookIntent(this));
         }
     }

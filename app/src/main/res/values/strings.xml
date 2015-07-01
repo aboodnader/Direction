@@ -1,7 +1,5 @@
 <resources>
-    <string name="app_name">Direction</string>
-    <string name="action_settings">Settings</string>
-    <string name="title_activity_splash">المأثورات</string>
+
     <string-array name="marks_array">
         <item>  </item>
         <item>A+</item>
@@ -17,6 +15,7 @@
         <item>D</item>
         <item>F</item>
     </string-array>
+
     <string-array name="azkar_array">
 
         <item>
@@ -141,9 +140,7 @@
 في زيارة القبور يقول: (السلام على أهل الديار من المؤمنين والمسلمين , ويرحم الله المستقدمين منكم والمستأخرين , وإنا إن شاء الله بكم لاحقون , أنتم لنا فرط ونحن لكم تبع , اللهم لا تحرمنا أجرهم , ولا تضلنا بعدهم) \n\n
 
         </item>
-
     </string-array>
-    <string name="title_activity_azkar_sub">azkar_sub</string>
 
     <string-array name="azkar_titles">
         <item>اليوم والليلة</item>
@@ -167,7 +164,8 @@
         <item>عوارض الحياة</item>
         <item>المرض والوفاة</item>
     </string-array>
-    <string name="title_activity_lecturs_and_exams">LectursAndExams</string>
 
-    <string name="hello_world">Hello world!</string>
+    <string name="app_name">Direction</string>
+    <string name="title_activity_splash">HU Orientation</string>
+
 </resources>

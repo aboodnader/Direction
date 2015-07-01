@@ -69,6 +69,16 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:text="مواقيت الصلاة"
+                android:id="@+id/salah"
+                android:onClick="open"
+                android:background="@layout/solid_color_shape"
+                android:textColor="#ffffff"
+                android:layout_marginBottom="2dp"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:text="صفحتنا على الفيسبوك"
                 android:id="@+id/facebook"
                 android:onClick="open"
