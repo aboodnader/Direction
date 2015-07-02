@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -79,11 +80,15 @@ public class Salah extends Activity {
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-                txt[0].setText(sala.get(0));
-                txt[1].setText(sala.get(2));
-                txt[2].setText(sala.get(3));
-                txt[3].setText(sala.get(4));
-                txt[4].setText(sala.get(5));
+                if(sala.size()>0) {
+                    txt[0].setText(sala.get(0));
+                    txt[1].setText(sala.get(2));
+                    txt[2].setText(sala.get(3));
+                    txt[3].setText(sala.get(4));
+                    txt[4].setText(sala.get(5));
+                }else{
+                    Toast.makeText(getBaseContext(),"??? ?? ???????",Toast.LENGTH_LONG).show();
+                }
             }
         },new Response.ErrorListener(){
 
