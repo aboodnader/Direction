@@ -59,7 +59,7 @@ public class Salah extends Activity {
         String dateFormat = "MM";
         SimpleDateFormat sdf = new SimpleDateFormat(dateFormat);
         String month = sdf.format(new Date());
-        final String day = (String) android.text.format.DateFormat.format("dd", new Date());
+        final String day = String.valueOf(Integer.parseInt((String) android.text.format.DateFormat.format("dd", new Date())));
         String url="http://api.xhanch.com/islamic-get-prayer-time.php?lng=36.192548&lat=32.099170&yy=2015&mm="+month+"&gmt=3&m=json";
         final ProgressDialog pd = new ProgressDialog(this, AlertDialog.THEME_HOLO_LIGHT);
         pd.show();
