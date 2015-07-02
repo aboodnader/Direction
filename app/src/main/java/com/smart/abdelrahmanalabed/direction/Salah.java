@@ -87,7 +87,7 @@ public class Salah extends Activity {
                     txt[3].setText(sala.get(4));
                     txt[4].setText(sala.get(5));
                 }else{
-                    Toast.makeText(getBaseContext(),"??? ?? ???????",Toast.LENGTH_LONG).show();
+                    Toast.makeText(getBaseContext(),"connection error",Toast.LENGTH_LONG).show();
                 }
             }
         },new Response.ErrorListener(){
