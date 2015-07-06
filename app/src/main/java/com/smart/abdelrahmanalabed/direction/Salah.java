@@ -75,7 +75,6 @@ public class Salah extends Activity {
                     sala.add(jsonObject2.getString("asr"));
                     sala.add(jsonObject2.getString("maghrib"));
                     sala.add(jsonObject2.getString("isha"));
-
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
