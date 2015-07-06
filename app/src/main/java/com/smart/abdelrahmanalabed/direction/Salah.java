@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -77,13 +78,28 @@ public class Salah extends Activity {
                     sala.add(jsonObject2.getString("isha"));
 
                 } catch (JSONException e) {
-                    e.printStackTrace();
+                    try{
+                        JSONObject jsonObject=new JSONObject(response);
+                        JSONObject jsonObject2=  jsonObject.getJSONObject(Integer.parseInt(day)+"");
+                        sala.add(jsonObject2.getString("fajr"));
+                        sala.add(jsonObject2.getString("sunrise"));
+                        sala.add(jsonObject2.getString("zuhr"));
+                        sala.add(jsonObject2.getString("asr"));
+                        sala.add(jsonObject2.getString("maghrib"));
+                        sala.add(jsonObject2.getString("isha"));
+                    }catch(JSONException el){
+                        Log.e("json",el.getLocalizedMessage());
+                    }
                 }
-                txt[0].setText(sala.get(0));
-                txt[1].setText(sala.get(2));
-                txt[2].setText(sala.get(3));
-                txt[3].setText(sala.get(4));
-                txt[4].setText(sala.get(5));
+                if(sala.size()>0) {
+                    txt[0].setText(sala.get(0));
+                    txt[1].setText(sala.get(2));
+                    txt[2].setText(sala.get(3));
+                    txt[3].setText(sala.get(4));
+                    txt[4].setText(sala.get(5));
+                }else{
+                    Toast.makeText(getBaseContext(), "connection error", Toast.LENGTH_LONG).show();
+                }
             }
         },new Response.ErrorListener(){
 
