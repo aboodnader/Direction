@@ -75,8 +75,21 @@ public class Salah extends Activity {
                     sala.add(jsonObject2.getString("asr"));
                     sala.add(jsonObject2.getString("maghrib"));
                     sala.add(jsonObject2.getString("isha"));
+
                 } catch (JSONException e) {
-                    e.printStackTrace();
+                    try{
+                        JSONObject jsonObject=new JSONObject(response);
+                        JSONObject jsonObject2=  jsonObject.getJSONObject(Integer.parseInt(day)+"");
+                        sala.add(jsonObject2.getString("fajr"));
+                        sala.add(jsonObject2.getString("sunrise"));
+                        sala.add(jsonObject2.getString("zuhr"));
+                        sala.add(jsonObject2.getString("asr"));
+                        sala.add(jsonObject2.getString("maghrib"));
+                        sala.add(jsonObject2.getString("isha"));
+                    } catch (JSONException e2) {
+                        Log.e("json",e.getLocalizedMessage());
+                        Log.e("json",e2.getLocalizedMessage());
+                    }
                 }
                 txt[0].setText(sala.get(0));
                 txt[1].setText(sala.get(2));
