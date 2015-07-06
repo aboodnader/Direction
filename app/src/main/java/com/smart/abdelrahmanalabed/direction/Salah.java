@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -90,12 +91,15 @@ public class Salah extends Activity {
                         Log.e("json",e.getLocalizedMessage());
                         Log.e("json",e2.getLocalizedMessage());
                     }
+                }if(sala.size()>0) {
+                    txt[0].setText(sala.get(0));
+                    txt[1].setText(sala.get(2));
+                    txt[2].setText(sala.get(3));
+                    txt[3].setText(sala.get(4));
+                    txt[4].setText(sala.get(5));
+                }else{
+                    Toast.makeText(getBaseContext(),"Connection error",Toast.LENGTH_LONG).show();
                 }
-                txt[0].setText(sala.get(0));
-                txt[1].setText(sala.get(2));
-                txt[2].setText(sala.get(3));
-                txt[3].setText(sala.get(4));
-                txt[4].setText(sala.get(5));
             }
         },new Response.ErrorListener(){
 
